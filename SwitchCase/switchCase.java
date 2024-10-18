@@ -1,19 +1,22 @@
 package SwitchCase;
-
 import java.util.Scanner;
 
 public class switchCase {
         public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in); //Inicialización del escaner
 
-            System.out.print("Introduce la nota (del 0 al 10):");
+            /*
+            Programa que solicita al usuario un número para decir si el alumno esta suspenso o aprobado (con su nota correspondiente)
+             */
+            System.out.print("Introduce la nota (del 0 al 10): ");
             int nota = scanner.nextInt();
 
+            //Se compara la variable introducida por el usuario con el número de los case
             switch (nota) {
                 case 0:
                     System.out.println("\uD83D\uDC80"); break;
-                case 1: //case 1, 2, 3, 4 -> System.out.printf("Suspenso"); Si se hace esto se tiene que hacer en el switch al completo, no se puede mezclar
-                    System.out.println("El nombre y ya"); break;
+                case 1: //Otra opcion: case 1, 2, 3, 4 -> System.out.printf("Suspenso"); Si se hace esto se tiene que hacer en el switch al completo, no se puede mezclar
+                    System.out.println("Pusiste el nombre y ya"); break;
                 case 2:
                     System.out.println("A la recuperación de cabeza"); break;
                 case 3:
@@ -36,59 +39,55 @@ public class switchCase {
                     System.out.println("Nota no válida. Debe ser un número entre 0 y 10."); break;
             }
 
+            /*
+            Programa que depues de solicitar un número a un usuario te lo pasa a formato letra
+             */
             System.out.println();
             System.out.println("Número de 0 al 99 pasado a letras");
-            System.out.print("Introduce el primer número del valor (0-9): ");
+
+            // Solicitar el número
+            System.out.print("Introduce un número (0-99): ");
             int numero = scanner.nextInt();
 
-            System.out.print("Tu número tiene segundo valor (0-9)? (introduce un número o -1 para no): ");
-            int numero2 = scanner.nextInt();
-
-            String valor1 = "";
-            String valor2 = "";
-            if (numero < 0 || numero > 9) {
-                System.out.println("El primer número debe estar entre 0 y 9.");
+            if (numero < 0 || numero > 99) {
+                System.out.println("El número debe estar entre 0 y 99.");
             } else {
+                String valor = "";
+                int decenas = numero / 10; // Extraer decenas
+                int unidades = numero % 10; // Extraer unidades
 
-                valor1 = switch (numero) {
-                    case 0 -> "cero";
-                    case 1 -> "uno";
-                    case 2 -> "veinte";
-                    case 3 -> "treinta";
-                    case 4 -> "cuarenta";
-                    case 5 -> "cincuenta";
-                    case 6 -> "sesenta";
-                    case 7 -> "setenta";
-                    case 8 -> "ochenta";
-                    case 9 -> "noventa";
-                    default -> "";
-                };
-            }
-
-            if (numero2 != -1) {
-                if (numero2 < 0 || numero2 > 9) {
-                    System.out.println("El segundo número debe estar entre 0 y 9 o -1 para no.");
-                } else {
-                    valor2 = switch (numero2) {
-                        case 0 -> "cero";
-                        case 1 -> "uno";
-                        case 2 -> "dos";
-                        case 3 -> "tres";
-                        case 4 -> "cuatro";
-                        case 5 -> "cinco";
-                        case 6 -> "seis";
-                        case 7 -> "siete";
-                        case 8 -> "ocho";
-                        case 9 -> "nueve";
-                        default -> "";
-                    };
+                switch (decenas) {
+                    case 0 -> valor += "";
+                    case 1 -> valor += (unidades == 0) ? "diez" : "diez y ";
+                    case 2 -> valor += "veinte";
+                    case 3 -> valor += "treinta";
+                    case 4 -> valor += "cuarenta";
+                    case 5 -> valor += "cincuenta";
+                    case 6 -> valor += "sesenta";
+                    case 7 -> valor += "setenta";
+                    case 8 -> valor += "ochenta";
+                    case 9 -> valor += "noventa";
                 }
+
+                if (decenas > 1 && unidades > 0) {
+                    valor += " y ";
+                }
+                switch (unidades) {
+                    case 1 -> valor += "uno";
+                    case 2 -> valor += "dos";
+                    case 3 -> valor += "tres";
+                    case 4 -> valor += "cuatro";
+                    case 5 -> valor += "cinco";
+                    case 6 -> valor += "seis";
+                    case 7 -> valor += "siete";
+                    case 8 -> valor += "ocho";
+                    case 9 -> valor += "nueve";
+                }
+
+                System.out.println("El número " + numero + " es: " + valor);
             }
 
-            System.out.print("El número " + numero + (numero2 != -1 ? + numero2 : "") + " es: " + valor1);
-            if (!valor2.isEmpty()) {
-                System.out.print(" y " + valor2);
-            }
+            scanner.close();
             }
 
         }
