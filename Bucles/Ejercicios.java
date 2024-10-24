@@ -33,22 +33,47 @@ public class Ejercicios {
             }
         }
 
+
+        //Usando While
         System.out.println();
         System.out.println("Introduzca las notas para calcular la media");
-        int nota = ej.nextInt();
-        int media = 0;          //Se declaran las variables
+        double nota = ej.nextDouble();
+        double media = 0;          //Se declaran las variables
         int contador = 0;
 
         while (nota != -1) {
             media += nota; //Se suman las notas y se almacenan en la variable media
             contador++;  //Cuenta el numero de notas
             System.out.println("Introduzca las notas para calcular la media (Introduzca -1 para salir)");
-            nota = ej.nextInt(); //Vuelve a preguntar si se quieren añadir mas notas, sino se introduce -1 para salir
+            nota = ej.nextDouble(); //Vuelve a preguntar si se quieren añadir mas notas, sino se introduce -1 para salir
         }
         media /= contador;  //Se divide el resultado de la media con el número de notas introducidas
         System.out.println("La media de las notas es " + media);
 
-        ej .close();
+
+
+        //Lo repetimos con Do While
+        System.out.println();
+
+        double nota2;
+        double media2 = 0;          //Se declaran las variables
+        int contador2 = 0;
+
+        do{
+            System.out.println("Introduzca las notas para calcular la media (Introduzca -1 para salir)");
+            nota2 = ej.nextDouble();
+
+            if (nota2 != -1) {
+                media2 += nota2; //Se suman las notas y se almacenan en la variable media
+                contador2++;  //Cuenta el numero de notas
+            }
+
+        } while (nota2 != -1);
+
+        media2 /= contador2;  //Se divide el resultado de la media con el número de notas introducidas
+        System.out.println("La media de las notas es " + media2);
+
+        ej.close();
 
     }
 }
