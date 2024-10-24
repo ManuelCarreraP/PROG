@@ -73,7 +73,6 @@ public class Ejercicios {
         media2 /= contador2;  //Se divide el resultado de la media con el número de notas introducidas
         System.out.println("La media de las notas es " + media2);
 
-
         ej.close();
 
     }
