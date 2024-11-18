@@ -1,8 +1,8 @@
-package Boletin1;
+package PrimerTrimestre.Boletin1;
 
 public class Boletin1 {
     public static void main(String[] args) {
-
+        //Programa que realiza operaciones
         System.out.println("Ej1");
         int a = ((3 + 2) % 2 - 15) / 2 * 5;
         System.out.println("a) ((3 + 2) % 2 - 15) / 2 * 5 = " + a);
@@ -27,13 +27,6 @@ public class Boletin1 {
 
         int h = (7 * 3 - 4 * 4) * 2 / 4 * 2;
         System.out.println("h) 7 * 4 * 4 * 2 / 4 * 2 = " + h);
-        System.out.println(" ");
-
-        System.out.println("Ej3");
-
-        System.out.println(" ");
-
-        System.out.println("Ej5");
 
 
     }

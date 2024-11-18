@@ -1,4 +1,5 @@
-package Boletin2;
+package PrimerTrimestre.Boletin2;
+
 
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ public class Boletin2 {
         System.out.println("· Boletin 2_3");
         String tipo = "";
 
-        while (!tipo.equals("Euros") && !tipo.equals("Dolares")) {
+        while (!tipo.equals("Euros") && !tipo.equals("Dolares")) { //Por si el usuario escribe mal "Euros" o "Dolares" que el programa no de error, que se vuelva a ejecutar
             System.out.println("¿Qué conversión quieres hacer? Introduce \"Euros\" si es de euros a dólares, o \"Dolares\" para convertir de dólares a euros:");
             tipo = boletin2.nextLine();
 
@@ -48,7 +49,7 @@ public class Boletin2 {
         System.out.println("· Boletín 2_4");
 
         System.out.println("Introduzca el primer número:");
-        int num1 = boletin2.nextInt(); //Falla y no entiendo porque.
+        int num1 = boletin2.nextInt();
 
         System.out.println("Introduzca el segundo número:");
         int num2 = boletin2.nextInt();

@@ -1,9 +1,10 @@
-package SwitchCase;
+package PrimerTrimestre.SwitchCase;
 import java.util.Scanner;
 
 public class switchCase {
         public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in); //Inicialización del escaner
+            Scanner scanner = new Scanner(System.in); //Inicialización del escane
+
 
             /*
             Programa que solicita al usuario un número para decir si el alumno esta suspenso o aprobado (con su nota correspondiente)

@@ -1,4 +1,4 @@
-package Bucles;
+package PrimerTrimestre.Bucles;
 
 import java.util.Scanner;
 

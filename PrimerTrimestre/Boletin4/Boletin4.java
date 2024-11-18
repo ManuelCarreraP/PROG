@@ -1,4 +1,4 @@
-package Boletin4;
+package PrimerTrimestre.Boletin4;
 
 import java.util.Scanner;
 
@@ -9,6 +9,7 @@ public class Boletin4 {
         System.out.print("Introduzca el número de productos vendidos anualmente para clasificarlos: ");
         int productos = sc.nextInt();
 
+        //Dependiendo de la cantidad de productos introducida muestra diferentes mensajes comparando con las cantidades que se especifican en los IFs
         if (productos <= 100) {
             System.out.println("Consumo bajo");
         } else if (productos > 100 && productos <= 500) {
@@ -27,7 +28,7 @@ public class Boletin4 {
         System.out.print("Introduce el número de la figura para calcular su superficie: ");
         int figura = sc.nextInt();
 
-        switch (figura) {
+        switch (figura) { //Dependiendo del número que introduzca el usuario se realiza el calculo del area de la figura solicitada
             case 1:
                 System.out.print("Introduce la longitud del lado: ");
                 double lado = sc.nextDouble();
@@ -48,7 +49,7 @@ public class Boletin4 {
                 radio = Math.PI * Math.pow(radio, 2);
                 System.out.println("El área del circulo es: " + radio);
                 break;
-            default:
+            default: //Por si el usuairo introduce un número que no esté en la lista
                 System.out.println("El número introducido no pertenece a ninguna figura");
                 break;
         }
@@ -57,6 +58,7 @@ public class Boletin4 {
         System.out.println("Ejercicio 3");
         System.out.print("Ingresa un número para saber su valor absoluto: ");
         double numero3 = sc.nextDouble();
+        //Despues de registrar el número introducido para el usuario se calcula el valor absoluto
         double valorAbsoluto = (numero3 < 0) ? - numero3 : numero3;
 
         System.out.println("El valor absoluto de " + numero3 + " es: " + valorAbsoluto);
@@ -67,7 +69,7 @@ public class Boletin4 {
         System.out.print("Introduce un número (0-99): ");
         int numero4 = sc.nextInt();
 
-        if (numero4 < 0 || numero4 > 99) {
+        if (numero4 < 0 || numero4 > 99) { //Por si el usuario introduce un número que no esté entre 0 y 99
             System.out.println("El número debe estar entre 0 y 99.");
         } else {
             String valor = "";
@@ -110,7 +112,7 @@ public class Boletin4 {
         System.out.print("Introduce los números de tu DNI para averiguar la letra: ");
         int nDNI = sc.nextInt();
         nDNI = nDNI % 23;
-        switch (nDNI) {
+        switch (nDNI) { //Compara el resultado del calculo anterior en el switch y le asigna una letra
             case 0 -> System.out.println("La letra de tu DNI es la \"T\"");
             case 1 -> System.out.println("La letra de tu DNI es la \"R\"");
             case 2 -> System.out.println("La letra de tu DNI es la \"W\"");

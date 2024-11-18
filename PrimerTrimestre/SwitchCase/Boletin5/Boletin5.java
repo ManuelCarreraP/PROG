@@ -1,4 +1,4 @@
-package Boletin5;
+package PrimerTrimestre.SwitchCase.Boletin5;
 import java.math.BigInteger;
 import java.util.Scanner;
 

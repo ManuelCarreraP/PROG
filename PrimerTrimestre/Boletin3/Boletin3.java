@@ -1,4 +1,4 @@
-package Boletin3;
+package PrimerTrimestre.Boletin3;
 
 import java.util.Scanner;
 
