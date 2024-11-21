@@ -212,7 +212,6 @@ public class Boletin7 {
                 fin = medio - 1;
             }
         }
-
         return -1;
     }
     */

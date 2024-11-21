@@ -20,14 +20,14 @@ public class Arrays {
         System.out.println(nombres[jugador - 1] + " tiene " + edades[jugador - 1] + " años ");
 
         int minimo = edades[0];
-        /*
+
         for (int i = 0 ; i < edades.length; i++) {
             if (minimo>edades[i]) {
                 minimo = edades[i];
             }
         }
         System.out.println("La edad minima de los jugadores es: " + minimo);
-        */
+
         System.out.println("Estas son las edades:");
         for (int edad : edades) {
             System.out.println(edad);

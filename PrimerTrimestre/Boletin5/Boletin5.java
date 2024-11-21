@@ -156,7 +156,7 @@ public class Boletin5 {
         System.out.println("Introduce por lo menos 10 números para calcular su suma (999 para salir)");
         System.out.println("Aunque pongas 999 para salir, si no tienes los 10 números minimos introducidos el bucle se seguira ejecutando");
         int contador8 = 0;
-        double numero8 = 0;
+        double numero8;
         double suma8 = 0;
 
         do {
