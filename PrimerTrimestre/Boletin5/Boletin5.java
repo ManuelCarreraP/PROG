@@ -118,7 +118,6 @@ public class Boletin5 {
         System.out.println("Ejercicio 6");
         int numero6;
 
-        // Solicitar un número
         System.out.print("Introduce un número para calcular su factorial: ");
         numero6 = sc.nextInt();
 
