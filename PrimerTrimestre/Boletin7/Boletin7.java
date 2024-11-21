@@ -220,7 +220,6 @@ public class Boletin7 {
         for (int i = inicio, j = 0; i < fin; i++, j++) {
             mitad[j] = lista[i];
         }
-
         return mitad;
     }
 
