@@ -55,7 +55,6 @@ public class Boletin8 {
 
         String parte1 = texto6.substring(0, 9);
         String parte2 = texto6.substring(9);
-
         String t6concatenado = parte1 + parte2;
 
         System.out.println("Parte 1: " + parte1);
