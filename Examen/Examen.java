@@ -19,21 +19,27 @@ public class Examen {
         segundo = sc.nextInt();
         System.out.print("Introduce las segundos que le quieres añadir a la hora ("+hora+":"+minuto+":"+segundo+"): ");
         segundosMas = sc.nextInt();
-
-        if (segundosMas >= 60) {
-          minuto = minuto + 1;
-          segundosMas = segundosMas - 60;
+        while (segundosMas >= 60){
+            minuto += 1;
+            segundosMas -= 60;
         }
 
-        if (segundo + segundosMas >= 60) {
+        while (segundo + segundosMas >= 60) {
                 segundo = segundo + segundosMas - 60;
                 minuto++;
         }
-        if (minuto >= 60) {
+        while (minuto >= 60) {
                 minuto -= 60;
                 hora++;
         }
 
         System.out.println("La hora actual es: "+hora+":"+minuto+":"+segundo);
+        /*
+        int total = 3600 * hora + 60 * minuto + segundo + segundosMas;
+        int totalH = (total / 3600) % 24;
+        int totalM = (total % 3600) / 60;
+        int totalS = (total % 3600) % 60;
+        System.out.println("La hora actual es: "+totalH+":"+totalM+":"+totalS);
+        */
     }
 }

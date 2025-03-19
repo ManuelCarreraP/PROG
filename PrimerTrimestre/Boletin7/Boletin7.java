@@ -1,10 +1,11 @@
 package PrimerTrimestre.Boletin7;
 import java.util.Scanner;
 import java.util.Random;
+import java.util.Arrays;
 
 public class Boletin7 {
     public static void main(String[] args) {
-        System.out.println("Ejercicio 1");
+        System.out.println("\nEjercicio 1");
         int[] numeros = new int[6];
         Random random = new Random();
 
@@ -21,9 +22,8 @@ public class Boletin7 {
         for (int i = numeros.length - 1; i >= 0; i--) {
             System.out.print(numeros[i] + " ");
         }
-        System.out.println();
-        System.out.println();
-        System.out.println("Ejercicio 2");
+
+        System.out.println("\nEjercicio 2");
         double maxima = 0;
         int contadorAprob = 0;
         int contadorSusp = 0;
@@ -50,8 +50,8 @@ public class Boletin7 {
         }
         System.out.println("La nota más alta es: " + maxima);
 
-        System.out.println();
-        System.out.println("Ejercicio 3");
+
+        System.out.println("\nEjercicio 3");
         String[] nombres = {"Saray", "Sofia", "Saul", "Anton", "Adriana", "Ivan F", "Daniel R", "Daniel F", "Karly", "Andrea", "Oscar", "Fernando", "Javier", "Jorge", "Piero", "Alexandre", "Ivan B", "Borja", "Manuel", "Carlos", "Fran", "Oliver", "Dima", "Jose", "Samuel", "Miguel", "Adrián M", "David", "Gael", "Adrián H"};
 
         Scanner scanner = new Scanner(System.in);
@@ -102,8 +102,7 @@ public class Boletin7 {
             System.out.println("Alumno no encontrado.");
         }
 
-        System.out.println();
-        System.out.println("Ejercicio 4");
+        System.out.println("\nEjercicio 4");
         System.out.print("Introduce tu DNI para saber su letra: ");
         int dni = scanner.nextInt();
         dni %= 23;
@@ -115,8 +114,7 @@ public class Boletin7 {
             }
         }
 
-        System.out.println();
-        System.out.println("Ejercicio 5");
+        System.out.println("\nEjercicio 5 (Buscar posicion)");
         System.out.println("Introduce una lista de números a introducir");
         System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
         int z = scanner.nextInt();
@@ -131,16 +129,22 @@ public class Boletin7 {
             System.out.println("El número introducido no se encuentra en la lista");
         } else System.out.println("El número " + x + " se encuentra en la posicion " + (lista(array, x) + 1));
 
-        System.out.println();
-        /*
-        System.out.println("Ejercicio 6");
+
+        System.out.println("\nEjercicio 6 (Buscar posición ordenada)");
         System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
         int k = scanner.nextInt();
-        int [] matriz  = new int[k];
+
+        int[] matriz = new int[k];
         for (int i = 0; i < matriz.length; i++) {
-            System.out.print("Introduce un numero para la posicion " + (i + 1) + " (Te quedan " + (matriz.length - i) + " números por introducir):");
+            System.out.print("Introduce un número para la posición " + (i + 1) +
+                    " (Te quedan " + (matriz.length - i - 1) + " números por introducir): ");
             matriz[i] = scanner.nextInt();
         }
+
+        Arrays.sort(matriz);
+
+        System.out.println("La lista ordenada es: " + Arrays.toString(matriz));
+
         System.out.print("Introduce el número a buscar en la lista: ");
         int valor = scanner.nextInt();
 
@@ -149,12 +153,11 @@ public class Boletin7 {
         if (resultado == -1) {
             System.out.println("Valor no encontrado en la lista.");
         } else {
-            System.out.println("Valor encontrado en la posicion: " + (resultado + 1));
+            System.out.println("Valor encontrado en la posición: " + (resultado + 1));
         }
-        */
 
-        System.out.println();
-        System.out.println("Ejercicio 7");
+
+        System.out.println("\nEjercicio X (Lista cortada)");
         System.out.println("Introduce una lista de números:");
         System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
         int j = scanner.nextInt();
@@ -175,18 +178,97 @@ public class Boletin7 {
         if (inicio < 0 || fin > lista.length || inicio >= fin) {
             System.out.println("Error: Las posiciones de inicio y fin son inválidas.");
         } else {
-            int[] resultado = cortarLista(lista, inicio, fin);
+            int[] resultado2 = cortarLista(lista, inicio, fin);
             System.out.println("Lista cortada:");
-            for (int num : resultado) {
+            for (int num : resultado2) {
                 System.out.print(num + " ");
             }
         }
+
+        System.out.println("\nEjercicio 7 (Copia de Array)");
+        System.out.println("Introduce una lista de números a introducir");
+        System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
+        int l = scanner.nextInt();
+        int [] lista2  = new int[l];
+        for (int i = 0; i < lista2.length; i++) {
+            System.out.print("Introduce un numero para la posicion " + (i + 1) + " (Te quedan " + (lista2.length - i) + " números por introducir):");
+            lista2[i] = scanner.nextInt();
+        }
+        System.out.println("Lista original:");
+        for (int og : lista2) {
+            System.out.print(og + " ");
+        }
+        System.out.println();
+        System.out.println("Copia de la lista original: ");
+        int [] copia = copia(lista2);
+        for (int copy : copia) {
+            System.out.print(copy + " ");
+        }
+
+        System.out.println("\nEjercicio 8 (Solo los números pares)");
+        System.out.println("Introduce una lista de números a introducir");
+        System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
+        int b = scanner.nextInt();
+        int [] lista3  = new int[b];
+        for (int i = 0; i < lista3.length; i++) {
+            System.out.print("Introduce un numero para la posicion " + (i + 1) + " (Te quedan " + (lista3.length - i) + " números por introducir):");
+            lista3[i] = scanner.nextInt();
+        }
+        System.out.println("Números pares de tu lista:");
+        for (int par : pares(lista3)) {
+            System.out.print(par + " ");
+        }
+
+        System.out.println("\nEjercicio 9 (Sin repetidos)");
+        System.out.println("Introduce una lista de números a introducir");
+        System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
+        int ñ = scanner.nextInt();
+        int [] lista4  = new int[ñ];
+        for (int i = 0; i < lista4.length; i++) {
+            System.out.print("Introduce un numero para la posicion " + (i + 1) + " (Te quedan " + (lista4.length - i) + " números por introducir):");
+            lista4[i] = scanner.nextInt();
+        }
+        System.out.println("Lista original:");
+        for (int og : lista4) {
+            System.out.print(og + " ");
+        }
+        System.out.println();
+        System.out.println("Lista sin repetidos: ");
+        int [] repetidos = sinRepetidos(lista4);
+        for (int rep : repetidos) {
+            System.out.print(rep + " ");
+        }
+
+        System.out.println("\nEjercicio 10 (Borrar elemento):");
+        System.out.println("Introduce una lista de números a introducir");
+        System.out.print("Introduce la cantidad de números que va a tener tu lista: ");
+        int r = scanner.nextInt();
+        int [] lista5  = new int[r];
+        for (int i = 0; i < lista5.length; i++) {
+            System.out.print("Introduce un numero para la posicion " + (i + 1) + " (Te quedan " + (lista5.length - i) + " números por introducir):");
+            lista5[i] = scanner.nextInt();
+        }
+        System.out.print("Introduce el número que quieres borrar: ");
+        int borrar = scanner.nextInt();
+        int contador = 0;
+        for (int i = 0; i < lista5.length; i++) {
+            if (lista5[i] == borrar) {
+                contador = 1;
+            }
+        }
+        if (contador == 1){
+            System.out.println("La lista sin el número " + borrar + " es:");
+            for (int borra : borrado(lista5, borrar)) {
+                System.out.print(borra + " ");
+            }
+        } else System.out.println("El número introducido no se encuentra en la lista");
+
         scanner.close();
     }
 
     //Funciones
 
-    private static int lista(int [] array , int num) {
+    private static int lista(int [] array , int num) { //Ej 5
         int y = -1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] == num) {
@@ -196,8 +278,8 @@ public class Boletin7 {
         }
         return y;
     }
-    /*
-    private static int buscar(int[] matriz, int valor) {
+
+    private static int buscar(int[] matriz, int valor) { //Ej 6
         int inicio = 0;
         int fin = matriz.length - 1;
 
@@ -212,10 +294,11 @@ public class Boletin7 {
                 fin = medio - 1;
             }
         }
+
         return -1;
     }
-    */
-    private static int[] cortarLista(int[] lista, int inicio, int fin) {
+
+    private static int[] cortarLista(int[] lista, int inicio, int fin) { //Ej X
         int[] mitad = new int[fin - inicio];
         for (int i = inicio, j = 0; i < fin; i++, j++) {
             mitad[j] = lista[i];
@@ -223,4 +306,73 @@ public class Boletin7 {
         return mitad;
     }
 
+    private static int[] copia(int[] lista) { //Ej 7
+        int[] copia = new int[lista.length];
+        for (int i = 0; i < lista.length; i++) {
+            copia[i] = lista[i];
+        }
+        return copia;
+    }
+    private static int[] pares(int[] lista) { //Ej 8
+        int contador = 0;
+        for (int num : lista) {
+            if (num % 2 == 0) {
+                contador++;
+            }
+        }
+
+        int[] resultado = new int[contador];
+        int indice = 0;
+        for (int num : lista) {
+            if (num % 2 == 0) {
+                resultado[indice++] = num;
+            }
+        }
+
+        return resultado;
+    }
+
+    private static int[] sinRepetidos(int[] lista) { //Ej 9
+        int rep = lista.length;
+        int[] temp = new int[rep];
+        int index = 0;
+
+        for (int i = 0; i < rep; i++) {
+            boolean duplicado = false;
+            for (int j = 0; j < index; j++) {
+                if (lista[i] == temp[j]) {
+                    duplicado = true;
+                    break;
+                }
+            }
+            if (!duplicado) {
+                temp[index++] = lista[i];
+            }
+        }
+
+        int[] listaSinRepetidos = new int[index];
+        for (int i = 0; i < index; i++) {
+            listaSinRepetidos[i] = temp[i];
+        }
+
+        return listaSinRepetidos;
+    }
+    private static int[] borrado(int[] lista, int borrar) { //Ej 10
+        int contador = 0;
+        for (int num : lista) {
+            if (num != borrar) {
+                contador++;
+            }
+        }
+
+        int[] resultado = new int[contador];
+        int indice = 0;
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] != borrar) {
+                resultado[indice++] = lista[i];
+            }
+        }
+
+        return resultado;
+    }
 }
