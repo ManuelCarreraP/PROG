@@ -83,14 +83,14 @@ public class Lista {
         }
     }
 
-    public void borrarElemento() {
+    public int borrarElemento() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("¿Deseas borrar un elemento de la lista? (s/n): ");
         String respuesta = scanner.next();
         if (respuesta.equalsIgnoreCase("n")) {
             System.out.println("No se borrará ningún elemento.");
-            return;
+            return 0;
         }
 
         boolean elementoEncontrado = false;
@@ -123,6 +123,7 @@ public class Lista {
             }
             elementoEncontrado = false;
         } while (true);
+        return 0;
     }
 
     public static void main(String[] args) {
